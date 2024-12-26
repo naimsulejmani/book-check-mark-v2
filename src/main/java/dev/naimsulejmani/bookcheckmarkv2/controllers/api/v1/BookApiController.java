@@ -36,8 +36,14 @@ public class BookApiController {
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void delete(@PathVariable long id) {
         service.deleteById(id);
+    }
+
+    @GetMapping("/default")
+    public BookDto defaultBook() {
+        return new BookDto();
     }
 
 }

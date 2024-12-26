@@ -12,7 +12,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class BookImpl implements BookService {
+public class BookServiceImpl implements BookService {
     private final BookRepository repository;
     private final BookMapper mapper;
 
@@ -50,6 +50,10 @@ public class BookImpl implements BookService {
 
     @Override
     public BookDto modify(Long id, BookDto dto) {
+
+        if (id != dto.getId()) {
+            throw new IllegalArgumentException("Id in path and body must be the same");
+        }
 
         if (!repository.existsById(id)) {
             throw new EntityNotFoundException("Book with id " + id + " not found");
