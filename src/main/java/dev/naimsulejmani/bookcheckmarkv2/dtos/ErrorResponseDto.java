@@ -15,4 +15,5 @@ public class ErrorResponseDto {
     private String message;
     private LocalDateTime timestamp = LocalDateTime.now();
     private String path;
+    private String method;
 }

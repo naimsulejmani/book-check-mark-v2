@@ -3,6 +3,7 @@ package dev.naimsulejmani.bookcheckmarkv2.controllers.api.v1;
 import dev.naimsulejmani.bookcheckmarkv2.dtos.BookDto;
 import dev.naimsulejmani.bookcheckmarkv2.services.BookService;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -21,13 +22,13 @@ public class BookApiController {
     }
 
     @GetMapping("/{id}")
-    public BookDto findById(@PathVariable long id) {
+    public BookDto findById(@Valid @PositiveOrZero(message = "Id must be positive or zero") @PathVariable long id) {
         return service.findById(id);
     }
 
     @PostMapping
     @ResponseStatus(value = HttpStatus.CREATED)
-    public BookDto add(@RequestBody BookDto bookDto) {
+    public BookDto add(@Valid @RequestBody BookDto bookDto) {
         return service.add(bookDto);//url to newly added book
     }
 
