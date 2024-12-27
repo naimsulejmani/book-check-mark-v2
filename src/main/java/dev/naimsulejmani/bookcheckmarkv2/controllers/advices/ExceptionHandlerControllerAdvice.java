@@ -5,6 +5,7 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
@@ -25,7 +26,8 @@ public class ExceptionHandlerControllerAdvice {
     }
 
 
-    @ExceptionHandler({IllegalArgumentException.class, IndexOutOfBoundsException.class})
+    @ExceptionHandler({IllegalArgumentException.class, IndexOutOfBoundsException.class,
+            ObjectOptimisticLockingFailureException.class})
     public ResponseEntity<ErrorResponseDto> handleIllegalArgumentException(HttpServletRequest request,
                                                                           RuntimeException e) {
         ErrorResponseDto errorResponseDto = new ErrorResponseDto();

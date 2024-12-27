@@ -2,6 +2,7 @@ package dev.naimsulejmani.bookcheckmarkv2.controllers.api.v1;
 
 import dev.naimsulejmani.bookcheckmarkv2.dtos.BookDto;
 import dev.naimsulejmani.bookcheckmarkv2.services.BookService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
