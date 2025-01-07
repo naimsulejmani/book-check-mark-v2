@@ -10,6 +10,58 @@
 <input type="text" id="title" placeholder="Set Title Here"/>
 <button type="button" id="showAlert">Show Alert</button>
 
+
+
+<div id="loader">
+    <p>Loading...</p>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="50" height="50">
+        <circle
+                cx="50"
+                cy="50"
+                r="40"
+                stroke="#4caf50"
+                stroke-width="10"
+                fill="none"
+                stroke-linecap="round"
+                stroke-dasharray="200"
+                stroke-dashoffset="200">
+            <animate
+                    attributeName="stroke-dashoffset"
+                    from="200"
+                    to="0"
+                    dur="1s"
+                    repeatCount="indefinite" />
+            <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    from="0 50 50"
+                    to="360 50 50"
+                    dur="2s"
+                    repeatCount="indefinite" />
+        </circle>
+    </svg>
+
+</div>
+
+<table border="1" id="mainTable" style="display: none">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Year</th>
+        <th>No. Pages</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody id="bookTable">
+
+    </tbody>
+</table>
+
+
+
 <script src="/js/books/api.js"></script>
 <script src="/js/books/app.js"></script>
 </body>

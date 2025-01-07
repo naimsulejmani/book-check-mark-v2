@@ -28,3 +28,22 @@
 
 * Exception Handling
 * Security
+
+
+
+
+
+JS ->
+* FETCH / AXIOS dhe komunikojme me @RestController (API)
+* Ndarja e logjikes ne Javascript code
+  * API, Models, Templates, UI, APP
+* Ndarja e logjikes ne HTML code (components)
+
+
+
+
+
+
+
+
+
